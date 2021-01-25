@@ -16,7 +16,7 @@ in Pre-Launch report in Google Play
 
    ```yaml
    dependencies:
-     is_firebase_test_lab_activated: ^1.0.1
+     is_firebase_test_lab_activated: ^1.0.2
    ```
 2. Import the package
 
