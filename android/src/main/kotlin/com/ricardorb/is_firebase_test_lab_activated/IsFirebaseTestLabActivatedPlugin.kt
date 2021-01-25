@@ -9,21 +9,22 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 
 /** IsFirebaseTestLabActivatedPlugin */
 class IsFirebaseTestLabActivatedPlugin : FlutterPlugin, MethodCallHandler {
-    /// The MethodChannel that will the communication between Flutter and native Android
-    ///
-    /// This local reference serves to register the plugin with the Flutter Engine and unregister it
-    /// when the Flutter Engine is detached from the Activity
+
     private lateinit var channel: MethodChannel
+    private var isFirebaseTestLabActivated: Boolean? = null
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "is_firebase_test_lab_activated")
         channel.setMethodCallHandler(this)
+        if (isFirebaseTestLabActivated == null) {
+        val testLabSetting: String = Settings.System.getString(flutterPluginBinding.applicationContext.contentResolver, "firebase.test.lab")
+            isFirebaseTestLabActivated = "true" == testLabSetting
+        }
     }
 
-    override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+    override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
         if (call.method == "isFirebaseTestLabActivated") {
-            val testLabSetting: String = Settings.System.getString(context.getContentResolver(), "firebase.test.lab")
-            result.success("true" == testLabSetting)
+            result.success(isFirebaseTestLabActivated)
         } else {
             result.notImplemented()
         }
