@@ -1,6 +1,6 @@
 name: is_firebase_test_lab_activated
 description: A flutter plugin to know if Firebase Test Lab is activated
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/RicardoRB/isfirebasetestlabactivated
 
 environment:
