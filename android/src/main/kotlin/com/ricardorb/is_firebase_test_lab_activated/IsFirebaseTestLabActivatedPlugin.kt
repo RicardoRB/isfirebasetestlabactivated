@@ -1,5 +1,6 @@
 package com.ricardorb.is_firebase_test_lab_activated
 
+import android.provider.Settings
 import androidx.annotation.NonNull
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
@@ -21,7 +22,7 @@ class IsFirebaseTestLabActivatedPlugin : FlutterPlugin, MethodCallHandler {
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
         if (call.method == "isFirebaseTestLabActivated") {
-            val testLabSetting: String = Android.Provider.Settings.System.getString(context.getContentResolver(), "firebase.test.lab")
+            val testLabSetting: String = Settings.System.getString(context.getContentResolver(), "firebase.test.lab")
             result.success("true" == testLabSetting)
         } else {
             result.notImplemented()
