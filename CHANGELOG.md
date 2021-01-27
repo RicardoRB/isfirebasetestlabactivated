@@ -1,3 +1,6 @@
+## 1.0.3
+- Fixed problem "firebase.test.lab" may be null
+
 ## 1.0.2
 - Fixed problem with android logic
 
