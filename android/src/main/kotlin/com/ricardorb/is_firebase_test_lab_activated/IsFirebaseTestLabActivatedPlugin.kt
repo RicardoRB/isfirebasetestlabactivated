@@ -14,12 +14,12 @@ class IsFirebaseTestLabActivatedPlugin : FlutterPlugin, MethodCallHandler {
     private var isFirebaseTestLabActivated: Boolean? = null
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "is_firebase_test_lab_activated")
-        channel.setMethodCallHandler(this)
         if (isFirebaseTestLabActivated == null) {
-        val testLabSetting: String = Settings.System.getString(flutterPluginBinding.applicationContext.contentResolver, "firebase.test.lab")
+            val testLabSetting: String? = Settings.System.getString(flutterPluginBinding.applicationContext.contentResolver, "firebase.test.lab")
             isFirebaseTestLabActivated = "true" == testLabSetting
         }
+        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "is_firebase_test_lab_activated")
+        channel.setMethodCallHandler(this)
     }
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
