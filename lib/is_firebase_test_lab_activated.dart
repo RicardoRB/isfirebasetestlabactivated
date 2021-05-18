@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/services.dart';
 
@@ -10,7 +9,6 @@ class IsFirebaseTestLabActivated {
   /// Return `true` if running under Firebase Test Lab (includes pre-launch
   /// report environment) on Android, `false` otherwise.
   static Future<bool> get isFirebaseTestLabActivated async {
-    return Platform.isAndroid &&
-        await _channel.invokeMethod('isFirebaseTestLabActivated');
+    return await _channel.invokeMethod('isFirebaseTestLabActivated');
   }
 }

@@ -1,3 +1,6 @@
+## 2.0.0
+- Added null-safety
+
 ## 1.0.3
 - Fixed problem "firebase.test.lab" may be null
 

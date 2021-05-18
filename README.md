@@ -6,8 +6,7 @@ A flutter plugin to know if Firebase Test Lab is activated
 
 This project is a starting point for a Flutter
 [Firebase official documentation](https://firebase.google.com/docs/test-lab/android/android-studio#modify_instrumented_test_behavior_for),
-where they explain how to know whether the app is running in Firebase Test Lab that is used 
-in Pre-Launch report in Google Play
+where they explain how to know whether the app is running in Firebase Test Lab
 
 
 ## Setup
@@ -16,7 +15,7 @@ in Pre-Launch report in Google Play
 
    ```yaml
    dependencies:
-     is_firebase_test_lab_activated: ^1.0.3
+     is_firebase_test_lab_activated: ^2.0.0
    ```
 2. Import the package
 
