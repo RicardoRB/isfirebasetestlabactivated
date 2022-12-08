@@ -3,7 +3,7 @@
 
 .idea
 
-.iml
+*.iml
 
 .packages
 .pub/
