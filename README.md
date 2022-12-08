@@ -15,7 +15,7 @@ where they explain how to know whether the app is running in Firebase Test Lab
 
    ```yaml
    dependencies:
-     is_firebase_test_lab_activated: ^2.0.0
+     is_firebase_test_lab_activated: ^2.0.1
    ```
 2. Import the package
 

@@ -1,3 +1,6 @@
+## 2.0.1
+- Updated kotlin version
+
 ## 2.0.0
 - Added null-safety
 
